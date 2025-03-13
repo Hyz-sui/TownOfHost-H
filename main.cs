@@ -59,7 +59,7 @@ namespace TownOfHost
         public static readonly Version ParsedForkVersion = Version.Parse(ForkVersion);
 
         public const string PluginGuid = "com.emptybottle.townofhost";
-        public const string PluginVersion = "5.1.8";
+        public const string PluginVersion = "5.1.9";
         // サポートされている最低のAmongUsバージョン
         public static readonly string LowestSupportedVersion = "2024.8.13";
         // このバージョンのみで公開ルームを無効にする場合
@@ -269,6 +269,7 @@ namespace TownOfHost
             SystemEnvironment.SetEnvironmentVariables();
 
             Harmony.PatchAll();
+            Application.quitting += new Action(Utils.SaveNowLog);
         }
         public override bool Unload()
         {
