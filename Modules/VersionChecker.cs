@@ -9,6 +9,7 @@ public static class VersionChecker
 
     public static void Check()
     {
+#if false
         var amongUsVersion = Version.Parse(Application.version);
         var lowestSupportedVersion = Version.Parse(Main.LowestSupportedVersion);
         IsSupported = amongUsVersion >= lowestSupportedVersion;
@@ -16,5 +17,6 @@ public static class VersionChecker
         {
             ErrorText.Instance.AddError(ErrorCode.UnsupportedVersion);
         }
+#endif
     }
 }
