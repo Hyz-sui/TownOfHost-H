@@ -17,6 +17,7 @@ namespace TownOfHost
         private static ClientActionItem ShowLobbySummary;
         private static ClientActionItem CopyGameCodeOnCreateLobby;
         private static ClientActionItem HauntMenuFocusCrewmate;
+        private static ClientActionItem OpenLogFolder;
 
         public static void Postfix(OptionsMenuBehaviour __instance)
         {
@@ -66,6 +67,10 @@ namespace TownOfHost
             if (DumpLog == null || DumpLog.ToggleButton == null)
             {
                 DumpLog = ClientActionItem.Create("DumpLog", Utils.DumpLog, __instance);
+            }
+            if (OpenLogFolder == null || OpenLogFolder.ToggleButton == null)
+            {
+                OpenLogFolder = ClientActionItem.Create("OpenLogFolder", Utils.OpenLogFolder, __instance);
             }
 
             if (ModUnloaderScreen.Popup == null)
